@@ -1,0 +1,30 @@
+<style>
+.responsive-video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  cursor: pointer; /* shows click is possible */
+}
+</style>
+
+<iframe
+  id="youtube-video"
+  class="responsive-video"
+  src="https://www.youtube.com/embed/pbfVSlLrSDU?autoplay=1&mute=1&rel=0"
+  allow="autoplay; encrypted-media"
+  allowfullscreen
+></iframe>
+
+<script>
+const iframe = document.getElementById('youtube-video');
+let unmuted = false;
+
+iframe.addEventListener('click', () => {
+  if (!unmuted) {
+    const src = iframe.src;
+    // Replace mute=1 with mute=0
+    iframe.src = src.replace('mute=1', 'mute=0');
+    unmuted = true;
+  }
+});
+</script>

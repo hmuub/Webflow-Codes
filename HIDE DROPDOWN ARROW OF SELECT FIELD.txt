@@ -1,0 +1,17 @@
+HIDE DROPDOWN ARROW OF SELECT FIELD
+
+<style>
+/* Hide default arrow */
+.form-input-field {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: none !important;
+  background-color: inherit;
+}
+
+/* Extra fix for some browsers that still show it */
+.form-input-field::-ms-expand {
+  display: none;
+}
+</style>
