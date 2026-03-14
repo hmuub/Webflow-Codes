@@ -1,0 +1,61 @@
+SLIDER - HOVER PAUSE
+(LEFT-RIGHT)
+
+
+<style>
+.testimonial-item.is-left {
+  animation: slideLeft 30s linear infinite;
+  animation-play-state: running;
+}
+
+@keyframes slideLeft {
+  0% { transform: translateX(0); }
+  99.999% { transform: translateX(-100%); }
+  100% { transform: translateX(0); }
+}
+</style>
+
+<script>
+document.querySelectorAll('.testimonial-item.is-left').forEach(item => {
+  item.addEventListener('mouseenter', () => {
+    document.querySelectorAll('.testimonial-item.is-left').forEach(el => {
+      el.style.animationPlayState = 'paused';
+    });
+  });
+
+  item.addEventListener('mouseleave', () => {
+    document.querySelectorAll('.testimonial-item.is-left').forEach(el => {
+      el.style.animationPlayState = 'running';
+    });
+  });
+});
+</script>
+
+<style>
+.testimonial-item.is-right {
+  animation: slideRight 30s linear infinite;
+  animation-play-state: running;
+}
+
+@keyframes slideRight {
+  0% { transform: translateX(-100%); }
+  99.999% { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
+}
+</style>
+
+<script>
+document.querySelectorAll('.testimonial-item.is-right').forEach(item => {
+  item.addEventListener('mouseenter', () => {
+    document.querySelectorAll('.testimonial-item.is-right').forEach(el => {
+      el.style.animationPlayState = 'paused';
+    });
+  });
+
+  item.addEventListener('mouseleave', () => {
+    document.querySelectorAll('.testimonial-item.is-right').forEach(el => {
+      el.style.animationPlayState = 'running';
+    });
+  });
+});
+</script>
