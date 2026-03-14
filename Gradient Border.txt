@@ -1,0 +1,29 @@
+<style>
+/* Apply this class to any div */
+.gradient-border {
+  position: relative;
+  border-radius: 16px;      /* corner radius */
+  background: #0f0f0f;      /* inner background color */
+}
+
+/* Gradient border */
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 2px;             /* border thickness */
+  border-radius: inherit;
+  background: linear-gradient(
+    90deg,
+    #ff8c1a,   /* orange */
+    #7b3fe4,   /* purple */
+    #ffffff    /* white */
+  );
+  -webkit-mask:
+    linear-gradient(#ffffff 0 0) content-box,
+    linear-gradient(#ffffff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+}
+</style>
